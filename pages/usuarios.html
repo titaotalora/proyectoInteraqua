@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="/frontend/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/frontend/images/Logo.png">
+
+</head>
+<body>
+    <section class="form-user">
+        <main>
+            <header>
+                <h1>Formulario de usuarios</h1><br>
+            </header>
+            <main>
+                <form action="/submit" method="post">
+                    <fieldset>
+                        <legend>Información Personal</legend>
+                        <fieldset>
+                            <label for="nombre">Nombre completo:</label><br>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </fieldset>
+                    
+                        <!--Tipo de documento-->
+                        <fieldset>
+                            <label for="doc">Tipo de documento:</label>
+                            <select name="doc">
+                                <option value="S" selected>Seleccione</option>
+                                <option value="CC">Cédula de ciudadanía</option>
+                                <option value="CE">Cédula de extranjería</option>
+                                <option value="PA">Pasaporte</option>
+                                <option value="PEP">Permiso especial</option>
+                            
+                            </select>
+                        </fieldset>
+                        <fieldset>
+                            <label for="docu">Número documento:</label>
+                            <input type="docu" id="docu" name="docu" required>
+                        
+                            <label for="email">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" required>
+                            
+                            <label for="telefono">Número de teléfono:</label>
+                            <input type="tel" id="telefono" name="telefono">
+                            
+                            <label for="fecha">Fecha de Nacimiento:</label>   
+                            <input type="date" id="fecha" name="fecha">
+
+                        </fieldset>                 
+                        
+                            <!--Género-->  
+                            <fieldset>
+                                <legend>Género:</legend>    
+                                    <input type="radio" id="masculino" name="genero" value="masculino">
+                                    <label for="masculino">Masculino</label><br>
+            
+                                    <input type="radio" id="femenino" name="genero" value="femenino">
+                                    <label for="femenino">Femenino</label><br>
+            
+                                    <input type="radio" id="otro" name="genero" value="otro">
+                                    <label for="otro">Otro</label><br>               
+                            </fieldset>
+
+                            <!-- Foto de perfil -->
+                            <fieldset>
+                                <label for="foto">Foto de perfil:</label>
+                                <input class="foto" type="file" id="foto" name="foto" required>                    
+                            </fieldset>      
+                    
+                            <!-- Términos y Condiciones -->
+                            <input type="checkbox" id="terminos" name="terminos" required>
+                            <label for="terminos">Acepto los términos y condiciones</label>
+                    </fieldset>
+
+                    <!-- Botones -->
+                    <div>
+                        <button class="form-buttons" type="submit">Crear</button>
+                        <button class="form-buttons" type="reset">Limpiar</button>
+                    </div>                           
+                </form>  
+            </main>       
+        </main>     
+    </section>
+
+    <footer>
+        <a href="https://www.interaqua-energy.com/" target="_blank">
+            <img src="/frontend/images/Logo.png" />   
+        </a>    
+        <br><p>&copy; 2025 Todos los derechos reservados</p>
+    </footer>
+    
+</body>
+</html>

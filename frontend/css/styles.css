@@ -1,0 +1,326 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    
+}
+
+/* Estilos de las clases del login */
+.form-login {
+    width: 400px;
+    height: 340px;
+    background-color: #ffffff;
+    margin: auto;
+    margin-top: 100px;
+    box-shadow: 7px 13px 37px #027F8E;
+    padding: 20px 30px;
+    border-top:  4px solid #f5a50f;
+    color: #004AAD;
+
+}
+
+.form-login h5 {
+    margin: 0px;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.controls {
+    width: 100%;
+    border: 3px solid #112a3c;
+    margin-bottom: 15px;
+    padding: 11px 10px;
+    background: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.buttons {
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to right,#00a651, #8dc63f);
+    border: none;
+    color: white;
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.buttons:hover{
+    background: linear-gradient(to right,#2f00ff, #0099ff);
+
+}
+
+.form-login p {
+    height: 40px;
+    text-align: center;
+    border-bottom: 1px solid;
+}
+
+.form-login a{
+    color: #004AAD;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.form-login a:hover{
+    text-decoration: underline;
+}
+
+/* Estilos de clases del dashboard */
+
+.form-dashboard {
+
+    width: 900px;
+    height: 500px;
+    background-color: #ffffff;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 7px 13px 37px #027F8E;
+    padding: 20px 30px;
+    border-top:  4px solid #f5a50f;
+    color: #E2388A; 
+}
+
+.form-dashboard h5 {
+    margin: 0px;
+    text-align: left;
+    height: 40px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.form-dashboard p {
+    height: 50px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: #2b0071; 
+}
+   
+/* Estilos de la grilla en el dashboard*/
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    grid-auto-rows: minmax(100px, 100px);  
+        
+}
+
+.grid div{
+    background: #ffffff;
+    padding: 1em;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    border: 5px solid #00a651;
+    box-shadow: 1px 1px 10px #027F8E;
+    color: rgb(0, 0, 0);
+}
+
+.grid div:hover{
+    background: linear-gradient(to right,#cdffd8, #94b9ff);
+
+}
+
+.elemento1{
+ 
+    width: 50%;
+    height: 80%;
+}
+
+.elemento2{
+ 
+    width: 50%;
+    height: 80%;
+    padding-top: 5px;
+}
+
+.elemento3{
+ 
+    width: 40%;
+    height: 80%;
+    padding-top: 5px;
+}
+
+.elemento4{
+ 
+    width: 50%;
+    height: 80%;
+}
+
+.elemento5{
+ 
+    width: 60%;
+    height: 80%;
+    padding-top: 5px;
+}
+
+.elemento6{
+ 
+    width: 40%;
+    height: 80%;
+    padding-top: 5px;
+}
+
+.elemento7{
+ 
+    width: 40%;
+    height: 80%;
+}
+
+.elemento8{
+ 
+    width: 40%;
+    height: 80%;
+}
+
+.elemento9{
+ 
+    width: 40%;
+    height: 80%;
+}
+
+/* Estilos para usuarios */
+
+.form-user {
+
+    width: 900px;
+    height: 1200px;
+    background-color: #ffffff;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 7px 13px 37px #027F8E;
+    padding: 20px 30px;
+    border-top:  4px solid #f5a50f;
+    color: #112a3c; 
+}
+
+fieldset {        
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+legend {
+    font-weight: bold;
+    color: #112a3c;
+}
+
+label {
+    margin-top: 1em;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.4em;
+    margin-top: 1em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Estilos para radio button*/
+input[type="radio"] {
+    width: 1px; /* Tamaño del botón */
+    height: 1px;
+    border: 1px solid #000000; /* Color del borde */
+    border-radius: 50%; /* Forma circular */
+    appearance: none; /* Elimina el estilo predeterminado */
+    outline: none;
+    cursor: pointer;
+  }
+  
+  input[type="radio"]:checked {
+    background-color: #6a00ff; /* Color de fondo al seleccionar */
+    border:1px solid #000000;
+  }
+
+  input[type="checkbox"] {
+    width: 2px; /* Tamaño del cuadro */
+    height: 2px;
+        /* Alinea el checkbox con el texto */
+    cursor: pointer;
+    appearance: none; /* Elimina el diseño predeterminado del navegador */
+    border: 2px solid #000000; /* Borde del cuadro */
+    border-radius: 4px; /* Esquinas redondeadas (opcional) */
+    outline: none;
+    background-color: white; /* Fondo */
+    
+  }
+  
+  input[type="checkbox"]:checked {
+    background-color: #6a00ff;
+  }
+
+  .form-buttons {
+    background-color: #6a00ff;
+    color: white;
+    padding: 1em;
+    border: none;
+    border-radius: 4px;      
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+}  
+
+/*Para cambiar el color cuando pase el mouse por el botón*/
+.form-buttons:hover {
+    background-color: #0d00ff;
+}  
+
+
+/* Estilos para productos */
+
+.form-productos {
+
+    width: 900px;
+    height: 900px;
+    background-color: #ffffff;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 7px 13px 37px #027F8E;
+    padding: 20px 30px;
+    border-top:  4px solid #f5a50f;
+    color: #112a3c;
+    ; 
+}
+
+
+
+/* Estilos para el pie de página */
+footer {
+    color: #112a3c;
+    padding: 15px 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+footer p{
+    text-align: center;
+
+}
+
+footer img {
+    display: block;
+    width: 60%;
+    margin: auto;
+    width:10%;
+    height: 10%;
+}
