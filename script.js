@@ -20,12 +20,12 @@ document.getElementById('productForm').addEventListener('submit', async (e) => {
         });
 
         if (response.ok) {
-            console.log('Producto creado correctamente');
+            mostrarModal('Producto creado correctamente');
         } else {
-            console.error('Error al crear el producto');
+            mostrarModal('Error al crear el producto');
         }
     } catch (error) {
-        console.error('Error:', error);
+        mostrarModal('Error:', error);
     }
 });
 
@@ -59,6 +59,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 tablaBody.appendChild(fila);
             });
         })
-        .catch(error => console.error('Error al obtener productos:', error));
+        .catch(error => mostrarModal('Error al obtener productos:', error));
 });
 
+// Función para mostrar la ventana modal
+function mostrarModal(mensaje) {
+    const modal = document.getElementById("modal");
+    const modalMensaje = document.getElementById("modal-mensaje");
+    modalMensaje.textContent = mensaje;
+    modal.style.display = "block";
+}
+
+// Función para cerrar la ventana modal
+function cerrarModal() {
+    const modal = document.getElementById("modal");
+    modal.style.display = "none";
+}
