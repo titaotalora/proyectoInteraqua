@@ -2,33 +2,65 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Productos</title>
-    <style>
-        table {
-            width: 50%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 15px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <link rel="stylesheet" href="/frontend/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/frontend/images/Logo.png">
 </head>
 <body>
-    <h2>Lista de Productos</h2>
-    <table>
-        <tr>
-            <th>Código</th>
-            <th>Nombre del Producto</th>
-            <th>Descripción</th>
-        </tr>
-        {table_rows}
-    </table>
+    <section class="form-lista">
+        <h1>Lista de Productos</h1>
+        <table id="tabla-productos">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se inyectarán las filas de productos -->
+            </tbody>
+        </table>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Evento DOMContentLoaded disparado');
+            fetch('/lista-productos')
+                .then(response => response.json())
+                .then(data => {
+                    const tablaBody = document.querySelector('#tabla-productos tbody');
+                    if (!tablaBody) {
+                        console.error('Elemento tabla-productos no encontrado en el DOM');
+                        return;
+                    }
+                    tablaBody.innerHTML = ''; // Limpiar cualquier contenido previo
+                    data.forEach(producto => {
+                        const fila = document.createElement('tr');
+
+                        const celdaCodigo = document.createElement('td');
+                        celdaCodigo.textContent = producto.codigo;
+                        fila.appendChild(celdaCodigo);
+
+                        const celdaNombre = document.createElement('td');
+                        celdaNombre.textContent = producto.nombre;
+                        fila.appendChild(celdaNombre);
+
+                        const celdaDescripcion = document.createElement('td');
+                        celdaDescripcion.textContent = producto.descripcion;
+                        fila.appendChild(celdaDescripcion);
+
+                        tablaBody.appendChild(fila);
+                    });
+                })
+                .catch(error => console.error('Error al obtener productos:', error));
+        });
+        </script>
+    </section>
+    <footer>
+        <a href="https://www.interaqua-energy.com/" target="_blank">
+            <img src="/frontend/images/Logo.png" />   
+        </a>    
+        <br><p>&copy; 2025 Todos los derechos reservados</p>
+    </footer>
 </body>
 </html>

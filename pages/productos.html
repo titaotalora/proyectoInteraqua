@@ -15,7 +15,7 @@
                 <h1>Creación de productos</h1><br>
             </header>
             <main>
-                <form id = "productForm">
+                <form id = "productForm" action="/listaProductos" method="post">
                     <fieldset>
                         <legend>Información del producto</legend>                 
                         <fieldset>
@@ -29,16 +29,6 @@
                             <label for="descripcion">Descripción:</label>
                             <input type="text" id="descripcion" name="descripcion" required><br><br>
                         </fieldset>              
-    
-                         <!--Activo-->  
-                         <!-- <fieldset>
-                            <legend>Activo:</legend>    
-                                <input type="radio" id="si" name="activo" value="si">
-                                <label for="si">Sí</label><br>
-        
-                                <input type="radio" id="no" name="activo" value="no">
-                                <label for="no">No</label><br>         
-                        </fieldset> -->
                     
                     </fieldset>
 

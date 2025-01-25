@@ -28,3 +28,37 @@ document.getElementById('productForm').addEventListener('submit', async (e) => {
         console.error('Error:', error);
     }
 });
+
+// Función para listar productos
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Evento DOMContentLoaded disparado');
+    fetch('/lista-productos')
+        .then(response => response.json())
+        .then(data => {
+            const tablaBody = document.querySelector('#tabla-productos tbody');
+            if (!tablaBody) {
+                console.error('Elemento tabla-productos no encontrado en el DOM');
+                return;
+            }
+            tablaBody.innerHTML = ''; // Limpiar cualquier contenido previo
+            data.forEach(producto => {
+                const fila = document.createElement('tr');
+
+                const celdaCodigo = document.createElement('td');
+                celdaCodigo.textContent = producto.codigo;
+                fila.appendChild(celdaCodigo);
+
+                const celdaNombre = document.createElement('td');
+                celdaNombre.textContent = producto.nombre;
+                fila.appendChild(celdaNombre);
+
+                const celdaDescripcion = document.createElement('td');
+                celdaDescripcion.textContent = producto.descripcion;
+                fila.appendChild(celdaDescripcion);
+
+                tablaBody.appendChild(fila);
+            });
+        })
+        .catch(error => console.error('Error al obtener productos:', error));
+});
+

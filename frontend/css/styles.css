@@ -197,6 +197,53 @@ body {
     height: 80%;
 }
 
+.elemento10{
+ 
+    width: 40%;
+    height: 80%;
+}
+
+/* Estilo para la lista de productos */
+
+.form-lista{
+
+    width: 50%;
+    height: 50%;
+    background-color: #ffffff;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 7px 13px 37px #027F8E;
+    padding: 20px 30px;
+    border-top:  4px solid #f5a50f;
+    color: #2600ff; 
+}
+
+.form-lista h1 {
+    margin: 0px;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid;
+    font-size: 25px;
+    font-weight: bold;
+    color: #ff00aa;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
+}
+
 /* Estilos para usuarios */
 
 .form-user {

@@ -15,6 +15,11 @@ app.get('/script.js', (req, res) => {
     res.sendFile(path.join(__dirname, 'script.js'));
 });
 
+// Ruta GET para enviar el archivo HTML de listaProductos
+app.get('/listaProductos', (req, res) => {
+    res.sendFile(path.join(__dirname, './pages/listaProductos.html'));
+});
+
 
 // Crear la conexión a la base de datos
 const db = mysql.createConnection({
@@ -31,11 +36,6 @@ db.connect((err) => {
     }
     console.log('Conectado a la base de datos MySQL');
 });
-
-// // Ruta GET para enviar el archivo HTML de formulario
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, './pages/productos.html'));
-// });
 
 // Ruta GET para enviar el archivo HTML de login
 app.get('/', (req, res) => {
@@ -69,6 +69,22 @@ app.post('/crear-producto', (req, res) => {
         }
         console.log('Producto creado exitosamente:', result);
         res.send('Producto creado correctamente');
+    });
+});
+
+// Ruta GET para enviar el archivo HTML de listaProductos
+app.get('/listaProductos', (req, res) => {
+    res.sendFile(path.join(__dirname, './pages/listaProductos.html'));
+});
+
+app.get('/lista-productos', (req, res) => {
+    const sql = 'SELECT * FROM productos';
+    db.query(sql, (err, results) => {
+        if (err) {
+            console.error('Error al obtener productos:', err);
+            return res.status(500).send('Error al obtener productos');
+        }
+        res.json(results);
     });
 });
 
