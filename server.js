@@ -9,6 +9,13 @@ app.use(express.json());
 // Configurar la carpeta para los archivos estáticos
 app.use(express.static(path.join(__dirname)));
 
+// Servir script.js con el tipo MIME correcto
+app.get('/script.js', (req, res) => {
+    res.type('application/javascript');
+    res.sendFile(path.join(__dirname, 'script.js'));
+});
+
+
 // Crear la conexión a la base de datos
 const db = mysql.createConnection({
     host: 'localhost',
@@ -25,9 +32,25 @@ db.connect((err) => {
     console.log('Conectado a la base de datos MySQL');
 });
 
-// Ruta GET para enviar el archivo HTML de formulario
+// // Ruta GET para enviar el archivo HTML de formulario
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, './pages/productos.html'));
+// });
+
+// Ruta GET para enviar el archivo HTML de login
 app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '/login.html'));
+});
+
+// Ruta GET para enviar el archivo HTML de productos
+app.get('/productos', (req, res) => {
     res.sendFile(path.join(__dirname, './pages/productos.html'));
+});
+
+// Ruta explícita para servir script.js con el tipo MIME correcto
+app.get('/script.js', (req, res) => {
+    res.type('application/javascript');
+    res.sendFile(path.join(__dirname, 'script.js'));
 });
 
 // Simulamos una base de datos en memoria
