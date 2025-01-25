@@ -23,8 +23,11 @@
             </tbody>
         </table>
         <script>
+
+// asegura que el código dentro de la función y se ejecutará solo cuando todos los elementos HTML estén completamente cargados y parseados por el navegador.
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Evento DOMContentLoaded disparado');
+            // la respuesta se recibe, se transforma en formato JSON.
             fetch('/lista-productos')
                 .then(response => response.json())
                 .then(data => {
@@ -34,6 +37,8 @@
                         return;
                     }
                     tablaBody.innerHTML = ''; // Limpiar cualquier contenido previo
+                    
+                    // Se crean las filas y celdas para luego ingresarlas en la tabla
                     data.forEach(producto => {
                         const fila = document.createElement('tr');
 
